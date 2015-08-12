@@ -39,6 +39,7 @@ module.exports = (config) ->
   app.set('view engine', 'jade')
   app.set('views', view_dir)
   app.locals.basedir = view_dir
+  app.locals.env = app.get('env')
 
   app.use '/assets/vendor', express.static('bower_components')
   app.use asset()
