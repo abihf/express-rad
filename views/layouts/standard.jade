@@ -1,0 +1,57 @@
+//
+   Created by abie on 8/12/15.
+
+extends base
+block body
+    nav.navbar.navbar-inverse.navbar-fixed-top
+        .container
+            .navbar-header
+                button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href=url('main.default.index'))= appName
+            #navbar.collapse.navbar-collapse
+                ul.nav.navbar-nav
+                    li
+                        a(href=url('main.default.index'))= __('Home')
+                    li
+                        a(href=url('main.default.about'))= __('About')
+                    li
+                        a(href=url('main.default.contact'))= __('Contact')
+
+                ul.nav.navbar-nav.navbar-right
+                    if user && user.name
+                        li.dropdown
+                            a.dropdown-toggle(href='#',data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false")
+                                i.fa.fa-user
+                                = " " + user.name + " "
+                                span.caret
+                            ul.dropdown-menu
+                                li
+                                    a(href=url('main.user.profile'))= __('Profile')
+                                li
+                                    a(href=url('main.user.logout'))= __('Logout')
+                    else
+                        li
+                            a(href=url('main.user.login'))= __('Login')
+
+
+
+    #main-body.container
+        block flashes
+            #flashes
+                if flash
+                    while message = flash.shift()
+                        .alert.alert-dismissible(class='alert-'+message.type,role="alert")
+                            button.close(type="button",data-dismiss="alert",aria-label=__("Close"))
+                                span(aria-hidden="true") &times;
+                            p= message.message
+
+        block main-body
+
+    footer.footer
+        block footer
+            .container
+                p.text-muted Copyright &copy; #{new Date().getFullYear()} Abi Hafshin

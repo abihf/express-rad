@@ -1,0 +1,27 @@
+{
+  "name": "express-rad",
+  "version": "1.0.0",
+  "authors": [
+    "Abi Hafshin Alfarouq <abi@hafs.in>"
+  ],
+  "description": "express-rad",
+  "keywords": [
+    "express"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0",
+    "bootlint": "https://maxcdn.bootstrapcdn.com/bootlint/0.12.0/bootlint.js"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "": "main.default.index",
+  "login": "main.user.login",
+  "logout": "main.user.logout"
+}

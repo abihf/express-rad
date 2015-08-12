@@ -1,0 +1,24 @@
+//
+   Created by abie on 8/11/15.
+// url('main.default.login')
+extends /layouts/standard
+include /mixins/form
+
+append variables
+    - var pageTitle = __('Login')
+block main-body
+    form#login-form(method="post", action='/login').whell
+        h2= __('Login')
+
+        label.sr-only(for="login-username")= __('User name')
+        input#login-username.form-control(name="username",value=username,type='text',placeholder=__('User name'),required,autofocus)
+
+        label.sr-only(for="login-password")= __('Password')
+        input#login-password.form-control(name="password",value=username,type='password',placeholder=__('Password'),required)
+
+        .checkbox
+            label
+                input(type="checkbox",name='remember')
+                = __('remember me')
+
+        button.btn.btn-primary.btn-lg.btn-block(type="submit")= __("Submit")

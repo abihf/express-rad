@@ -1,0 +1,11 @@
+# node libraries
+node_modules
+
+# vendor assets
+bower_components
+
+# temporary assets build directory
+builtAssets
+
+# ide folders
+.idea
